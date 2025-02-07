@@ -4,9 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
-  <title>Document</title>
+  <title>Tic Tac Toe</title>
 </head>
 <body>
+  <main>
+    <section class="controls">
+      <div class="player1 score">
+        X: <span>0</span>
+      </div>
+      <div class="player2 score">
+        O: <span>0</span>
+      </div>
+
+      <button class="start-btn">Start a new Game</button>
+    </section>
+
+    <section class="game">
+      <div class="grid">
+        <div class="quadrant top left"></div>
+        <div class="quadrant top"></div>
+        <div class="quadrant top right"></div>
+        <div class="quadrant left"></div>
+        <div class="quadrant "></div>
+        <div class="quadrant right"></div>
+        <div class="quadrant bottom left"></div>
+        <div class="quadrant bottom"></div>
+        <div class="quadrant bottom right"></div>
+      </div>
+    </section>
+  </main>
   
   <script src="index.js"></script>
 </body>
