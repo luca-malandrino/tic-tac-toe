@@ -1,6 +1,8 @@
 const startBtn = document.querySelector('button')
 const quadrants = document.querySelectorAll('.quadrant')
 let firstPlayer = 0
+let player2Score = 0
+let player1Score = 0
 
 startBtn.addEventListener('click', startGame)
 
@@ -10,7 +12,7 @@ function startGame() {
 
   quadrants.forEach(quadrant => {
     quadrant.textContent = ''
-    quadrant.addEventListener('click', e => {
+    quadrant.addEventListener('click', function makeMove (e) {
       if(!isGameOver) {
         if(player && e.target.textContent === '') {
           e.target.textContent = 'O'
@@ -21,21 +23,22 @@ function startGame() {
           e.target.style.color = 'orange'
           player = 1
         }
-
+    
         isGameOver = checkGameOver()
-
+    
         if(isGameOver) {
           if(e.target.textContent === 'X') {
-            document.querySelectorAll('.score span')[0].textContent = Number(document.querySelectorAll('.score span')[0].textContent) + 1
+            player1Score += 1
+            document.querySelectorAll('.score span')[0].textContent = player1Score
           } else {
-            document.querySelectorAll('.score span')[1].textContent = Number(document.querySelectorAll('.score span')[1].textContent) + 1
+            player2Score += 1
+            document.querySelectorAll('.score span')[1].textContent = player2Score
           }
         }
       }
     })
   })
 
-  
   firstPlayer = firstPlayer ? 0 : 1
 }
 
